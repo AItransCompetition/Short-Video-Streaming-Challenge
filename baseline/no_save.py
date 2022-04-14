@@ -59,7 +59,7 @@ class Algorithm:
     # Define your algorithm
     def run(self, delay, rebuf, video_size, end_of_video, play_video_id, Players, first_step=False):
         DEFAULT_QUALITY = 0
-        if first_step:   # 第一步没有任何信息
+        if first_step:   # there's no information in the first step.
             self.sleep_time = 0
             return 0, 2, self.sleep_time
 
