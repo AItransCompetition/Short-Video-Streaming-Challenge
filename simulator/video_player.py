@@ -4,7 +4,7 @@ import math
 import os
 
 BITRATE_LEVELS = 3
-VIDEO_BIT_RATE = [900,1450,2300]  # Kbps
+VIDEO_BIT_RATE = [750,1200,1850]  # Kbps
 VIDEO_CHUNCK_LEN = 1000.0
 MILLISECONDS_IN_SECOND = 1000.0
 VIDEO_SIZE_FILE = 'data/short_video_size/'

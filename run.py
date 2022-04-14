@@ -12,14 +12,15 @@ parser.add_argument('--user', type=str, default='./', help='The relative path of
 parser.add_argument('--trace', type=int, default=0, help='The network trace you are testing')
 args = parser.parse_args()
 
-VIDEO_BIT_RATE = [900,1450,2300]  # Kbps
+VIDEO_BIT_RATE = [750,1200,1850]  # Kbps
 SUMMARY_DIR = 'logs'
 LOG_FILE = 'logs/log.txt'
 
 # QoE arguments
 alpha = 1
-beta = 4.3
+beta = 1.85
 gamma = 1
+theta = 0.5
 ALL_VIDEO_NUM = 5
 baseline_QoE = 600  # baseline's QoE
 TOLERANCE = 0.1  # The tolerance of the QoE decrease
@@ -68,11 +69,15 @@ def test(isBaseline, isQuickstart, user_id, trace_id, behavior_id):
     sum_wasted_bytes = 0
     QoE = 0
     last_played_chunk = -1  # record the last played chunk
+    bandwidth_usage = 0  # record total bandwidth usage
 
     while True:
         delay, rebuf, video_size, end_of_video, \
         play_video_id, waste_bytes, smooth = net_env.buffer_management(download_video_id, bit_rate, sleep_time)
         # print(delay, rebuf, video_size, end_of_video, play_video_id, waste_bytes)
+
+        # Update bandwidth usage
+        bandwidth_usage += video_size
 
         # Update bandwidth wastage
         sum_wasted_bytes += waste_bytes  # Sum up the bandwidth wastage
@@ -132,6 +137,10 @@ def test(isBaseline, isQuickstart, user_id, trace_id, behavior_id):
         else:
             print("Download Video ", download_video_id, " chunk (", net_env.players[download_video_id - play_video_id].get_chunk_counter() + 1, " / ",
                   net_env.players[download_video_id - play_video_id].get_chunk_sum(), ") with bitrate ", bit_rate, file=log_file)
+    # Score
+    S = QoE - theta * bandwidth_usage * 8 / 1000000.
+    print("Your score is: ")
+    print(S)
 
     # QoE
     print("Your QoE is: ")

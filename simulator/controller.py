@@ -18,7 +18,7 @@ BEHAVIOR_FOLDER = './data/user_behavior/'
 NEW = 0
 DEL = 1
 
-VIDEO_BIT_RATE = [900,1450,2300]  # Kbps
+VIDEO_BIT_RATE = [750,1200,1850]  # Kbps
 RECOMMEND_QUEUE = 5
 
 class Environment:
