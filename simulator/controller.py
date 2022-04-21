@@ -86,7 +86,9 @@ class Environment:
         play_tm, buffer = self.players[0].video_play(min(time_len, first_play))
         total_smooth = 0
         # print(self.start_video_id, time_len, play_tm, buffer)
-        while time_len > 0 and play_tm >= min(self.players[0].get_video_len(), self.user_models[0].get_ret_duration()) - 1e-10:  # 如果时间没过完就结束播放
+        while time_len > 0 and play_tm >= min(self.players[0].get_video_len(), self.user_models[0].get_ret_duration()) - 1e-10:
+            # While current video end and user switch to next video
+
             time_len = play_tm - min(self.players[0].get_video_len(), self.user_models[0].get_ret_duration())
             # After user ended the current video
             # Output: the downloaded time length, the total time length, the watch duration

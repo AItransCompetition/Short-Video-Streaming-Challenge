@@ -60,6 +60,7 @@ class Player:
                 self.user_time.append(float(line.split()[0]) * MILLISECONDS_IN_SECOND)
                 self.user_retent_rate.append(line.split()[1])
 
+    # return data recorded in 'user_ret' folder
     def get_user_model(self):
         return self.user_time, self.user_retent_rate
     
@@ -72,6 +73,7 @@ class Player:
         return video_chunk_size
 
     def get_video_quality(self, chunk_id):
+        # Get the quality of chunk_id-th downloaded chunk
         if chunk_id >= len(self.download_chunk_bitrate):
             return -1  # means no video downloaded
         return self.download_chunk_bitrate[chunk_id]
@@ -81,6 +83,7 @@ class Player:
         return self.preload_size
     
     def get_undownloaded_video_size(self, P):  # the undownloaded video size
+        # P: the number of the size of future undownloaded chunks you want to know
         chunk_playing = self.get_chunk_counter()
         future_videosize = []
         for i in range(BITRATE_LEVELS):
@@ -91,6 +94,7 @@ class Player:
         return future_videosize
 
     def get_future_video_size(self, P):  # the unplayed video size
+        # P: the number of the size of future unplayed chunks you want to know
         interval = 1
         chunk_playing = self.get_play_chunk()
         if chunk_playing % 1 == 0:  # Check whether it is an integer
@@ -121,6 +125,7 @@ class Player:
         return self.buffer_size
     
     def record_download_bitrate(self, bit_rate):
+        # Record the quality of downloaded chunk
         self.download_chunk_bitrate.append(bit_rate)
     
     def get_downloaded_bitrate(self):
