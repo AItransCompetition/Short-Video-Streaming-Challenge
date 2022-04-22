@@ -37,6 +37,7 @@ log_file = open(LOG_FILE, 'w')
 
 
 def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
+    global LOG_FILE
     if isBaseline:  # Testing baseline algorithm
         sys.path.append('./baseline/')
         if user_id == 'no_save':
