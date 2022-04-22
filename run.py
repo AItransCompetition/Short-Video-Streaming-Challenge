@@ -8,7 +8,7 @@ from simulator import controller as env, short_video_load_trace
 parser = argparse.ArgumentParser()
 parser.add_argument('--quickstart', type=str, default='', help='Is testing quickstart')
 parser.add_argument('--baseline', type=str, default='', help='Is testing baseline')
-parser.add_argument('--user', type=str, default='./', help='The relative path of your file dir, default is current dir')
+parser.add_argument('--solution', type=str, default='./', help='The relative path of your file dir, default is current dir')
 parser.add_argument('--trace', type=str, default='fixed', help='The network trace you are testing (fixed, high, low, medium, middle)')
 args = parser.parse_args()
 
@@ -37,6 +37,7 @@ log_file = open(LOG_FILE, 'w')
 
 
 def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
+    global LOG_FILE
     if isBaseline:  # Testing baseline algorithm
         sys.path.append('./baseline/')
         if user_id == 'no_save':
@@ -207,7 +208,7 @@ def test_user_samples(isBaseline, isQuickstart, user_id, trace, sample_cnt):  # 
         global seeds
         np.random.seed(seed_for_sample[j])
         seeds = np.random.randint(10000, size=(7, 2))  # reset the sample random seeds
-        avgs += test_all_traces(j, isBaseline, isQuickstart, user_id, trace, j)
+        avgs += test_all_traces(isBaseline, isQuickstart, user_id, trace, j)
     avgs /= sample_cnt
     print("Score: ", avgs[0])
     print("Bandwidth Usage: ", avgs[1])
@@ -219,7 +220,7 @@ def test_user_samples(isBaseline, isQuickstart, user_id, trace, sample_cnt):  # 
 if __name__ == '__main__':
     assert args.trace in ["fixed", "high", "low", "medium", "middle"]
     if args.baseline == '' and args.quickstart == '':
-        test_all_traces(False, False, args.user, args.trace, 0)  # 0 means the first user sample.
+        test_all_traces(False, False, args.solution, args.trace, 0)  # 0 means the first user sample.
     elif args.quickstart != '':
         test_all_traces(False, True, args.quickstart, args.trace, 0)
     else:

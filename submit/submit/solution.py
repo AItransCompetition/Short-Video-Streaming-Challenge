@@ -1,3 +1,8 @@
+# PATH
+# if you want to call your model ,the path setting is
+
+# NN_MODEL = "/home/team/"$YOUR TEAM NAME"/submit/results/nn_model_ep_18200.ckpt" # model path settings
+
 from simulator.video_player import Player
 class Algorithm:
     def __init__(self):

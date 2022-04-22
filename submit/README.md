@@ -15,7 +15,7 @@ Submit
 * PATH
 if you want to call your model ,the path setting is 
 ```
-NN_MODEL = "/root/mmgc/team/"$YOUR TEAM NAME"/submit/results/nn_model_ep_18200.ckpt" # model path settings
+NN_MODEL = "/home/team/"$YOUR TEAM NAME"/submit/results/nn_model_ep_18200.ckpt" # model path settings
 ```
 * Algorithm
 
