@@ -28,7 +28,7 @@ theta = 0.5
 ALL_VIDEO_NUM = 7
 # baseline_QoE = 600  # baseline's QoE
 # TOLERANCE = 0.1  # The tolerance of the QoE decrease
-MIN_QOE = -1e9
+MIN_QOE = -1e4
 all_cooked_time = []
 all_cooked_bw = []
 
@@ -52,7 +52,7 @@ def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
         sys.path.remove('./quickstart/')        
     else:  # Testing participant's algorithm
         sys.path.append(user_id)
-        import Solution
+        import solution as Solution
         sys.path.remove(user_id)
         LOG_FILE = 'logs/log.txt'
     solution = Solution.Algorithm()
@@ -145,7 +145,7 @@ def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
 
         if QoE < MIN_QOE:  # Prevent dead loops
             print('Your QoE is too low...(Your video seems to have stuck forever) Please check for errors!')
-            return
+            return np.array([-1e9, bandwidth_usage,  QoE, sum_wasted_bytes, net_env.get_wasted_time_ratio()])
 
         # play over all videos
         if play_video_id >= ALL_VIDEO_NUM:

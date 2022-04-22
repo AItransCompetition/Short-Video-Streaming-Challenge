@@ -26,5 +26,5 @@ class Algorithm:
     def run(self, delay, rebuf, video_size, end_of_video, play_video_id, Players, first_step=False):
         download_video_id = 0
         bit_rate = 0
-        sleep_time = 0.0
+        sleep_time = 500.0
         return download_video_id, bit_rate, sleep_time
