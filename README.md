@@ -169,7 +169,7 @@ You can evaluate your program with our simulator by simply running the `run.py` 
 
 ##### The args:
 
-- `--baseline`, `--user`：choose the algorithm you are evaluating
+- `--baseline`, `--solution`：choose the algorithm you are evaluating
 
 - `--trace`: (optional) choose the type of trace you are evaluating from "fixed", "medium", "low", "high". By default, trace would be set to fixed.
 
@@ -186,10 +186,12 @@ python run.py --baseline no_preload
 
 2）Run your own algorithm
 
-You should input your relative code directory path to `run.py` as argument `--user`
+You can input your relative code directory path to `run.py` as argument `--solution`. 
+
+**By default**, if you haven't pass `--baseline` nor `--quickstart`,  the default setting will run the `solution.py  ` under the root directory.
 
 ```bash
-python run.py --user <Your relative code directory path>
+python run.py --solution <Your relative code directory path>
 ```
 
 For example, if you place your file under the `submit` dir under the root directory:
@@ -199,7 +201,7 @@ For example, if you place your file under the `submit` dir under the root direct
 # run.py
 # submit
 #   |_solution.py
-python run.py --user ./submit/
+python run.py --solution ./submit/
 ```
 
 ##### The outputs:
@@ -229,10 +231,23 @@ The log files are placed under `/logs`:
   - The change of video qualities within a single video
   - The rebuffering time if you have caused a rebuffer
 
+#### 4. Submit
+
+The directory `/submit` provides a sample for the directory that you submit on our website. Your files should be organized as `submit.zip` (You can unzip it for details, we also list the structure below):
+
+> submit
+>
+> |__solution.py   ——Your algorithm
+>
+> |__results  ——Your supplementary files, e.g. pretrained learning models.
+>
+> ​      |__......
+
 # Update
 
 ### 4/22 Version 1
 
+- **We change the argument name of your own algorithm path for `run.py`  from `--user` to `--solution` to prevent confusion with user model.**
 - Expand video traces to 7 videos. Check `/data/short_video_size/` and `/user_ret` directory for details.
 - Add `test_all_traces` function, which you can test on a specific set of traces (fixed, medium, high, low), each contains several distinct traces with similar patterns, and get the average indices.
   - By default, running `run.py` will be running this new function. If you want to test a certain trace, you can change the testing logic in `run.py` by yourself.
