@@ -15,8 +15,8 @@ LOW_BITRATE_THRESHOLD = 1000
 HIGH_BITRATE_THRESHOLD = 2000
 # If there is no need to download, sleep for TAU time.
 TAU = 500.0  # ms
-# max length of recommend_queue
-RECOMMEND_QUEUE = 5
+# max length of PLAYER_NUM
+PLAYER_NUM = 5
 # user retention threshold
 RETENTION_THRESHOLD = 0.65
 # fixed preload chunk num
@@ -55,8 +55,8 @@ class Algorithm:
         if Players[0].get_remain_video_num() != 0:  # downloading of the current playing video hasn't finished yet 
             download_video_id = play_video_id
         else:
-            # preload videos in RECOMMEND_QUEUE one by one
-            for seq in range(1, min(len(Players), RECOMMEND_QUEUE)):
+            # preload videos in PLAYER_NUM one by one
+            for seq in range(1, min(len(Players), PLAYER_NUM)):
                 if Players[seq].get_chunk_counter() < PRELOAD_CHUNK_NUM and Players[seq].get_remain_video_num() != 0:      # preloading hasn't finished yet 
                     # calculate the possibility: P(user will watch the chunk which is going to be preloaded | user has watched from the beginning to the start_chunk)  
                     start_chunk = int(Players[seq].get_play_chunk())
