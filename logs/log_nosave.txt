@@ -1,1032 +1,107 @@
-Download Video  0  chunk ( 1  /  17 ) with bitrate  2
-Playing Video  0  chunk ( 0.0  /  17 ) with bitrate  2
-You caused rebuf for Video  0  of  1571.3210203622457  ms
+Download Video  0  chunk ( 1  /  26 ) with bitrate  2
+Playing Video  0  chunk ( 0.0  /  26 ) with bitrate  2
+You caused rebuf for Video  0  of  1791.7786628078386  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 2  /  17 ) with bitrate  1
-Playing Video  0  chunk ( 1.0  /  17 ) with bitrate  2
-You caused rebuf for Video  0  of  218.83772231146008  ms
+Download Video  0  chunk ( 2  /  26 ) with bitrate  1
+Playing Video  1  chunk ( 0.0  /  17 ) with bitrate  -1
+You caused rebuf for Video  1  of  88.61013688003055  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 3  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 2.0  /  17 ) with bitrate  1
-You caused rebuf for Video  0  of  609.0280384433931  ms
+Download Video  1  chunk ( 1  /  17 ) with bitrate  0
+Playing Video  1  chunk ( 0.0  /  17 ) with bitrate  0
+You caused rebuf for Video  1  of  403.5888122855952  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 4  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 2.9948648001981875  /  17 ) with bitrate  0
+Download Video  1  chunk ( 2  /  17 ) with bitrate  1
+Playing Video  2  chunk ( 0.0  /  37 ) with bitrate  -1
+You caused rebuf for Video  2  of  203.63382724868302  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 5  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 3.528121842559757  /  17 ) with bitrate  0
+Download Video  2  chunk ( 1  /  37 ) with bitrate  1
+Playing Video  2  chunk ( 0.0  /  37 ) with bitrate  1
+You caused rebuf for Video  2  of  449.431303770194  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 6  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 4.146518744207506  /  17 ) with bitrate  0
+Download Video  2  chunk ( 2  /  37 ) with bitrate  2
+Playing Video  3  chunk ( 0.0  /  47 ) with bitrate  -1
+You caused rebuf for Video  3  of  38.74942817947948  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 7  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 4.641346617560824  /  17 ) with bitrate  0
+Download Video  3  chunk ( 1  /  47 ) with bitrate  1
+Playing Video  3  chunk ( 0.0  /  47 ) with bitrate  1
+You caused rebuf for Video  3  of  318.79936633182933  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 8  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 4.877178994220348  /  17 ) with bitrate  0
+Download Video  3  chunk ( 2  /  47 ) with bitrate  2
+Playing Video  3  chunk ( 0.4123339634615016  /  47 ) with bitrate  1
 *****************
 
 
 *****************
-Download Video  0  chunk ( 9  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 5.439801664697445  /  17 ) with bitrate  0
+Download Video  3  chunk ( 3  /  47 ) with bitrate  2
+Playing Video  4  chunk ( 0.0  /  40 ) with bitrate  -1
+You caused rebuf for Video  4  of  851.068288797275  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 10  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 5.968798656987127  /  17 ) with bitrate  0
+Download Video  4  chunk ( 1  /  40 ) with bitrate  1
+Playing Video  4  chunk ( 0.0  /  40 ) with bitrate  1
+You caused rebuf for Video  4  of  570.7191211620261  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 11  /  17 ) with bitrate  2
-Playing Video  0  chunk ( 6.923308404209547  /  17 ) with bitrate  0
+Download Video  4  chunk ( 2  /  40 ) with bitrate  1
+Playing Video  5  chunk ( 0.0  /  6 ) with bitrate  -1
+You caused rebuf for Video  5  of  34.7993797105795  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 12  /  17 ) with bitrate  2
-Playing Video  0  chunk ( 7.350157888108739  /  17 ) with bitrate  0
+Download Video  5  chunk ( 1  /  6 ) with bitrate  1
+Playing Video  5  chunk ( 0.0  /  6 ) with bitrate  1
+You caused rebuf for Video  5  of  383.27430275858745  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 13  /  17 ) with bitrate  1
-Playing Video  0  chunk ( 8.070964536831402  /  17 ) with bitrate  0
+Download Video  5  chunk ( 2  /  6 ) with bitrate  2
+Playing Video  6  chunk ( 0.0  /  125 ) with bitrate  -1
+You caused rebuf for Video  6  of  940.0  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 14  /  17 ) with bitrate  1
-Playing Video  0  chunk ( 9.4710650726319  /  17 ) with bitrate  0
+Download Video  6  chunk ( 1  /  125 ) with bitrate  0
+Playing Video  6  chunk ( 0.0  /  125 ) with bitrate  0
+You caused rebuf for Video  6  of  331.58966443417637  ms
 *****************
 
 
 *****************
-Download Video  0  chunk ( 15  /  17 ) with bitrate  1
-Playing Video  0  chunk ( 14.0  /  17 ) with bitrate  1
-You caused rebuf for Video  0  of  475.58973365710426  ms
+Download Video  6  chunk ( 2  /  125 ) with bitrate  0
+Playing Video  6  chunk ( 0.7090082873865705  /  125 ) with bitrate  0
 *****************
 
 
 *****************
-Download Video  0  chunk ( 16  /  17 ) with bitrate  0
-Playing Video  0  chunk ( 15.0  /  17 ) with bitrate  1
-You caused rebuf for Video  0  of  183.12844696297634  ms
-*****************
-
-
-*****************
-Download Video  0  chunk ( 17  /  17 ) with bitrate  0
-Playing Video  1  chunk ( 0.0  /  26 ) with bitrate  -1
-You caused rebuf for Video  1  of  371.3301124424597  ms
-*****************
-
-
-*****************
-Download Video  1  chunk ( 1  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 0.0  /  26 ) with bitrate  0
-You caused rebuf for Video  1  of  2067.7627262062942  ms
-*****************
-
-
-*****************
-Download Video  1  chunk ( 2  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 0.986239763488486  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 3  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 2.0  /  26 ) with bitrate  0
-You caused rebuf for Video  1  of  1741.6728995619083  ms
-*****************
-
-
-*****************
-Download Video  1  chunk ( 4  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 3.0  /  26 ) with bitrate  0
-You caused rebuf for Video  1  of  197.3525934374818  ms
-*****************
-
-
-*****************
-Download Video  1  chunk ( 5  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 3.5638430281636424  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 6  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 4.122865634491839  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 7  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 4.232084262392905  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 8  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 6.874137823505871  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 9  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 7.268305095633403  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 10  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 9.0  /  26 ) with bitrate  0
-You caused rebuf for Video  1  of  576.3385434823904  ms
-*****************
-
-
-*****************
-Download Video  1  chunk ( 11  /  26 ) with bitrate  2
-Playing Video  1  chunk ( 9.224411117751185  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 12  /  26 ) with bitrate  2
-Playing Video  1  chunk ( 9.619971193834665  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 13  /  26 ) with bitrate  2
-Playing Video  1  chunk ( 9.887452907583903  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 14  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 11.210170534369801  /  26 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  1  chunk ( 15  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 11.632785313275534  /  26 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  1  chunk ( 16  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 12.144141624440971  /  26 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  1  chunk ( 17  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 13.126804582582668  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 18  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 13.276231816123111  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 19  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 13.904183502748817  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 20  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 15.068865560329206  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 21  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 15.852248670560366  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 22  /  26 ) with bitrate  0
-Playing Video  1  chunk ( 17.189280817388436  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 23  /  26 ) with bitrate  1
-Playing Video  1  chunk ( 19.888343349171972  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 24  /  26 ) with bitrate  2
-Playing Video  1  chunk ( 21.54657487399826  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 25  /  26 ) with bitrate  2
-Playing Video  1  chunk ( 21.674975150246325  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  1  chunk ( 26  /  26 ) with bitrate  2
-Playing Video  1  chunk ( 21.84610739035558  /  26 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 1  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 0.0  /  37 ) with bitrate  0
-You caused rebuf for Video  2  of  505.2184195635564  ms
-*****************
-
-
-*****************
-Download Video  2  chunk ( 2  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 0.6756138257360305  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 3  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 1.6044066888755628  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 4  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 2.472806541002715  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 5  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 3.5746843063165956  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 6  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 5.0  /  37 ) with bitrate  0
-You caused rebuf for Video  2  of  374.7542278002197  ms
-*****************
-
-
-*****************
-Download Video  2  chunk ( 7  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 6.0  /  37 ) with bitrate  0
-You caused rebuf for Video  2  of  208.03140740932486  ms
-*****************
-
-
-*****************
-Download Video  2  chunk ( 8  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 7.0  /  37 ) with bitrate  0
-You caused rebuf for Video  2  of  192.96919111862803  ms
-*****************
-
-
-*****************
-Download Video  2  chunk ( 9  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 7.496936100092034  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 10  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 8.174502241541758  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 11  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 8.549691301654141  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 12  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 9.559827772199133  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 13  /  37 ) with bitrate  0
-Playing Video  2  chunk ( 10.006638829123784  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 14  /  37 ) with bitrate  1
-Playing Video  2  chunk ( 10.493950442322259  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 15  /  37 ) with bitrate  1
-Playing Video  2  chunk ( 10.998122174259235  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 16  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 12.013816490342135  /  37 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  2  chunk ( 17  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 13.152867991083117  /  37 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  2  chunk ( 18  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 13.678679419967228  /  37 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  2  chunk ( 19  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 14.527694980807768  /  37 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  2  chunk ( 20  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 15.8381124382932  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 21  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 17.09804603254075  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 22  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 17.862492798154143  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 23  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 18.57080071434517  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 24  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 19.46522131573046  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 25  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 20.22757723247119  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 26  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 20.728451712088997  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 27  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 21.930351307314442  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 28  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 23.31211350946761  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 29  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 24.629365429966015  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 30  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 25.71299167065457  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 31  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 26.347685709684335  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 32  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 27.21530698112858  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 33  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 28.26538627996313  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 34  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 28.92599153376289  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 35  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 29.601371847888597  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 36  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 30.19960881896455  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  2  chunk ( 37  /  37 ) with bitrate  2
-Playing Video  2  chunk ( 30.842898522263024  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 1  /  40 ) with bitrate  1
-Playing Video  2  chunk ( 31.382155489834116  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 2  /  40 ) with bitrate  1
-Playing Video  2  chunk ( 31.744847350056762  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 3  /  40 ) with bitrate  2
-Playing Video  2  chunk ( 32.90719430996084  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 4  /  40 ) with bitrate  2
-Playing Video  2  chunk ( 33.848122634536715  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 1  /  47 ) with bitrate  1
-Playing Video  2  chunk ( 34.47292024312248  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 2  /  47 ) with bitrate  1
-Playing Video  2  chunk ( 35.66042268711555  /  37 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 3  /  47 ) with bitrate  0
-Playing Video  3  chunk ( 0.06848560884589824  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 5  /  40 ) with bitrate  0
-Playing Video  3  chunk ( 1.2981856632119109  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 6  /  40 ) with bitrate  0
-Playing Video  3  chunk ( 2.0645959958018403  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 7  /  40 ) with bitrate  0
-Playing Video  3  chunk ( 2.88484921887829  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 8  /  40 ) with bitrate  0
-Playing Video  3  chunk ( 3.966816605958154  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 9  /  40 ) with bitrate  0
-Playing Video  3  chunk ( 4.453620713152328  /  40 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  3  chunk ( 10  /  40 ) with bitrate  0
-Playing Video  3  chunk ( 5.307408446796259  /  40 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  3  chunk ( 11  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 6.116368767841479  /  40 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  3  chunk ( 12  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 7.435240627370886  /  40 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  3  chunk ( 13  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 8.45409877074567  /  40 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  3  chunk ( 14  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 9.052670807162416  /  40 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  3  chunk ( 15  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 9.85138100777054  /  40 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  3  chunk ( 16  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 11.106800140331185  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 17  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 12.081194738955817  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 18  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 12.856827220576992  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 19  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 13.631373719859303  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 20  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 13.767974825973443  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 21  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 14.907687931310077  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 22  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 15.772987610668986  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 23  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 16.795170744909417  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 24  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 18.16605491036732  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 25  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 19.43907801368435  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 26  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 20.979899299645023  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 27  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 21.64877937017825  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 28  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 22.927136382666234  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 29  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 23.78571920524317  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 30  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 24.488565513573416  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 31  /  40 ) with bitrate  1
-Playing Video  3  chunk ( 25.57571681099091  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 32  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 27.005973717167166  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 33  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 28.494044042754737  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 34  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 29.693284450359567  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 35  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 30.76199928021126  /  40 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  3  chunk ( 36  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 31.13668620923883  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 37  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 32.809205304689655  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 38  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 34.10991218648122  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 39  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 35.19061071731537  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  3  chunk ( 40  /  40 ) with bitrate  2
-Playing Video  3  chunk ( 36.537697087848755  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 4  /  47 ) with bitrate  2
-Playing Video  3  chunk ( 38.01344530778039  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 5  /  47 ) with bitrate  2
-Playing Video  3  chunk ( 39.18684709784441  /  40 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 6  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 0.0  /  47 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  4  chunk ( 7  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 0.9296559339405168  /  47 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  4  chunk ( 8  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 2.054182809238801  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 9  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 3.1374164488603853  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 10  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 3.9767261926226847  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 11  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 5.190813187210595  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 12  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 6.129519092000826  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 13  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 6.772287941948099  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 14  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 7.546015040863  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 15  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 8.66543281861855  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 16  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 9.348033847809843  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 17  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 10.539851299208598  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 18  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 11.351079907548138  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 19  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 12.371472179986556  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 20  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 13.31397268012961  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 21  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 14.891482433847404  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 22  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 16.536602713026454  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 23  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 17.67708437815777  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 24  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 19.189997706323393  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 25  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 20.08487344094329  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 26  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 21.021922330027095  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 27  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 22.332819215570364  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 28  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 23.85313612861826  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 29  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 25.219370387789066  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 30  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 26.26843659395661  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 31  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 27.448288059250483  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 32  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 29.26494335364319  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 33  /  47 ) with bitrate  1
-Playing Video  4  chunk ( 30.726920480951588  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 34  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 31.497909772582414  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-Download Video  4  chunk ( 35  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 32.599473993659025  /  47 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  4  chunk ( 36  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 33.71009245849395  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 37  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 34.9309375750883  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 38  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 36.033183354486525  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 39  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 36.794204648474626  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 40  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 37.18389068617217  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 41  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 37.58965109674062  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 42  /  47 ) with bitrate  0
-Playing Video  4  chunk ( 37.93251120896865  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 43  /  47 ) with bitrate  1
-Playing Video  4  chunk ( 38.93856604704476  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 44  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 39.93897640210502  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 45  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 41.23120785738596  /  47 ) with bitrate  0
-*****************
-
-
-*****************
-Download Video  4  chunk ( 46  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 42.203018873573924  /  47 ) with bitrate  1
-*****************
-
-
-*****************
-Download Video  4  chunk ( 47  /  47 ) with bitrate  2
-Playing Video  4  chunk ( 43.29570558675389  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-You choose to sleep for  500.0  ms
-Playing Video  4  chunk ( 43.79570558675389  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-You choose to sleep for  500.0  ms
-Playing Video  4  chunk ( 44.29570558675389  /  47 ) with bitrate  2
-*****************
-
-
-*****************
-You choose to sleep for  500.0  ms
+Download Video  6  chunk ( 3  /  125 ) with bitrate  1
 Finished Playing!
 *****************
 The user leaves.

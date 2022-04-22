@@ -1,6 +1,10 @@
 # ACM Multimedia 2022 Grand Challenge: Short Video Streaming
 This repository contains the simulator code used for ACM Multimedia 2022 Short Video Streaming.  The simulator is a short video streaming simulator with a pluggable client module for participant defined download control algorithms.
 
+***Details of the update in each version is listed at the end of README.*** 
+
+> Currently at Version 1 ：Updated at 4/22
+
 # Quick Start
 
 We provide a demo which aims at helping you to learn what parameters you need to decide in the challenge. It only gives you some clues to things you can do to improve the algorithm, so it isn't necessarily reasonable. You need to find a better solution to balance QoE and bandwidth waste.
@@ -80,7 +84,7 @@ Please design an algorithm which decides `download_video_id`, `bit_rate` and `sl
 
 The data files are placed under `/data`:
 
-- /short_video_size：currently there are five different videos
+- /short_video_size：currently there are seven different videos
 
   | Video Name<br /> (directory name) | Time (s) |  Video Type   |
   | :-------------------------------: | :------: | :-----------: |
@@ -89,6 +93,8 @@ The data files are placed under `/data`:
   |               3_gy                |    37    |     Life      |
   |               4_dx                |    40    |     Life      |
   |               5_ss                |    47    |     Life      |
+  |               6_jt                |    6     | Entertainment |
+  |               7_yd                |   125    |     Game      |
 
   In each directory,  there are data of three bit rate levels of this video, ranging from *0* to *2*. *0* is the lowest and *2* is the highest. The video size of each chunk is 1000 ms. For example, a video of 3 chunks( 1s/chunk, with a total time length of 3 seconds ) can be described as follows:
 
@@ -108,7 +114,7 @@ The data files are placed under `/data`:
   0.879999876022	4.49231799163
   ```
 
-- /user_ret：describes a user retention model of each video
+- /user_ret：describes a user retention model of each video which we generate 
 
   For example, a video of 3 seconds can take the following form: 
 
@@ -125,6 +131,7 @@ The data files are placed under `/data`:
   *Cautious:* The last (4 0) is only an end mark, the actual length is 3 seconds.
   
   The leave ratio can be deducted from subtracting one retention rate with its former retention rate. For instance, (92.97 - 83.24) % = 9.73% of users leave within the 1s-2s period.
+  
 
 The video data structure may seem confusing at first, we provide a detailed illustration below:
 
@@ -163,7 +170,8 @@ You can evaluate your program with our simulator by simply running the `run.py` 
 ##### The args:
 
 - `--baseline`, `--user`：choose the algorithm you are evaluating
-- `--trace`: (optional) choose the trace_id you are evaluating (currently fixed to zero, will change if we add dataset)
+
+- `--trace`: (optional) choose the type of trace you are evaluating from "fixed", "medium", "low", "high". By default, trace would be set to fixed.
 
 1）Run a baseline algorithm
 
@@ -220,3 +228,13 @@ The log files are placed under `/logs`:
   
   - The change of video qualities within a single video
   - The rebuffering time if you have caused a rebuffer
+
+# Update
+
+### 4/22 Version 1
+
+- Expand video traces to 7 videos. Check `/data/short_video_size/` and `/user_ret` directory for details.
+- Add `test_all_traces` function, which you can test on a specific set of traces (fixed, medium, high, low), each contains several distinct traces with similar patterns, and get the average indices.
+  - By default, running `run.py` will be running this new function. If you want to test a certain trace, you can change the testing logic in `run.py` by yourself.
+- Add `test_user_samples` function, which enables you to test several user samples at a time and get their average indices.
+- Fix the QoE calculation issue. Thanks to https://github.com/AItransCompetition/Short-Video-Streaming-Challenge/issues/2.

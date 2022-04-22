@@ -1,6 +1,6 @@
 # Comparison Algorithm: No saving approach
 # No saving algorithm downloads the current playing video first.
-# When the current playing video download ends, it preloads the videos on the recommendation queue periodically, with 800KB for each video.
+# When the current playing video download ends, it preloads the videos in the following players periodically, with 800KB for each video.
 
 import numpy as np
 import sys
@@ -11,7 +11,7 @@ from simulator import mpc_module
 MPC_FUTURE_CHUNK_COUNT = 5     # MPC 
 PAST_BW_LEN = 5
 TAU = 500.0  # ms
-RECOMMEND_QUEUE = 5  
+PLAYER_NUM = 5  
 PROLOAD_SIZE = 800000.0   # B
 
 class Algorithm:
@@ -71,7 +71,7 @@ class Algorithm:
         P = []
         all_future_chunks_size = []
         future_chunks_highest_size = []
-        for i in range(min(len(Players), RECOMMEND_QUEUE)):
+        for i in range(min(len(Players), PLAYER_NUM)):
             if Players[i].get_remain_video_num() == 0:      # download over
                 P.append(0)
                 all_future_chunks_size.append([0])
@@ -89,22 +89,22 @@ class Algorithm:
             need_loop = True
             cnt = 1
             remain_video_sum = 0
-            for seq in range(1, min(len(Players), RECOMMEND_QUEUE)):
+            for seq in range(1, min(len(Players), PLAYER_NUM)):
                 remain_video_sum += Players[seq].get_remain_video_num()
             if remain_video_sum == 0: 
                 need_loop = False
             while need_loop:
                 remain_video_sum = 0
-                if min(len(Players), RECOMMEND_QUEUE) == 1:
+                if min(len(Players), PLAYER_NUM) == 1:
                     need_loop = False
                 else:
-                    for seq in range(1, min(len(Players), RECOMMEND_QUEUE)):
+                    for seq in range(1, min(len(Players), PLAYER_NUM)):
                         if Players[seq].get_preload_size() < (PROLOAD_SIZE * cnt) and Players[seq].get_remain_video_num() > 0:
                             download_video_id = play_video_id + seq
                             need_loop = False
                             break
                         remain_video_sum += Players[seq].get_remain_video_num()
-                        if seq == min(len(Players), RECOMMEND_QUEUE) - 1:
+                        if seq == min(len(Players), PLAYER_NUM) - 1:
                             if remain_video_sum > 0:
                                 cnt += 1
                             else:
