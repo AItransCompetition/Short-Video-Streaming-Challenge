@@ -218,7 +218,7 @@ def test_user_samples(isBaseline, isQuickstart, user_id, trace, sample_cnt):  # 
 
 
 if __name__ == '__main__':
-    assert args.trace in ["fixed", "high", "low", "medium", "middle"]
+    assert args.trace in ["mixed", "high", "low", "medium"]
     if args.baseline == '' and args.quickstart == '':
         test_all_traces(False, False, args.solution, args.trace, 0)  # 0 means the first user sample.
     elif args.quickstart != '':
