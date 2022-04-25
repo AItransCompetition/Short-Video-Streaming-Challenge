@@ -175,13 +175,12 @@ You can evaluate your program with our simulator by simply running the `run.py` 
 
 1）Run a baseline algorithm
 
-We have two baseline algorithms, fix_preload and no_preload, which you can refer to the content introduction for details. 
+We have one baseline algorithm `no_save`, which you can refer to the content introduction for details. 
 
-You can run these baselines to get a basic idea of our simulator and how you can interact with it.
+You can run the baselines to get a basic idea of our simulator and how you can interact with it.
 
 ```bash
-python run.py --baseline fixed_preload
-python run.py --baseline no_preload
+python run.py --baseline no_save
 ```
 
 2）Run your own algorithm

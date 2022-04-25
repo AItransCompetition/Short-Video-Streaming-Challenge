@@ -68,7 +68,7 @@ class Player:
 
     def get_video_size(self, quality):
         video_chunk_size = self.video_size[quality][self.video_chunk_counter]
-        self.preload_size += video_chunk_size
+        # self.preload_size += video_chunk_size
         return video_chunk_size
 
     def get_video_quality(self, chunk_id):
@@ -122,6 +122,7 @@ class Player:
     
     def record_download_bitrate(self, bit_rate):
         self.download_chunk_bitrate.append(bit_rate)
+        self.preload_size += self.video_size[bit_rate][self.video_chunk_counter]
     
     def get_downloaded_bitrate(self):
         return self.download_chunk_bitrate
