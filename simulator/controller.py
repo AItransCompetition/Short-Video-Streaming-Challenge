@@ -81,26 +81,26 @@ class Environment:
 
     def play_videos(self, action_time):  # play for action_time from the start of current players queue
         # print("\n\nPlaying Video ", self.start_video_id)
-        wasted_bd = 0
+        wasted_bw = 0
         buffer = 0
 
         # Continues to play if all the following conditions are satisfied:
         # 1) there's still action_time len
         # 2) the last video hasn't caused rebuf
         # 3) the video queue is not empty (will break inside the loop if its already empty)
-        while buffer >= 0 and abs(action_time) > 1e-10:
+        while buffer >= 0 and action_time > 0:
             # print("time_left:", action_time)
             # the timeline of the current video before this play step
             timeline_before_play = self.players[0].play_timeline
             # print("timeline_before_play: ", timeline_before_play)
             # the remain time length of the current video
-            video_remain_time = min(self.players[0].get_video_len(), self.user_models[0].get_ret_duration()) - timeline_before_play
+            video_remain_time = self.user_models[0].get_ret_duration() - timeline_before_play
             # print("video_remain_time: ", video_remain_time)
             # the maximum play time of the current video
             max_play_time = min(action_time, video_remain_time)
             # print("max_play_time: ", video_remain_time)
             # timeline_after_play is the actual time when the play action ended( <=max_play_tm + before_play )
-            timeline_after_play, buffer = self.players[0].video_play(min(action_time, max_play_time))
+            timeline_after_play, buffer = self.players[0].video_play(max_play_time)
             # print("timeline_after_play: ", timeline_after_play)
             # the actual time length of this play action
             actual_play_time = timeline_after_play - timeline_before_play
@@ -126,7 +126,7 @@ class Environment:
                 print("Your downloaded bitrates are: ", video_qualities, ", therefore your smooth penalty is: ", smooth)
 
                 # use watch duration as an arg for the calculation of wasted_bandwidth of this current video
-                wasted_bd += self.players[0].bandwidth_waste(self.user_models[0])
+                wasted_bw += self.players[0].bandwidth_waste(self.user_models[0])
 
                 # Forward the queue head to the next video
                 self.player_op(DEL)
@@ -140,7 +140,9 @@ class Environment:
                 print("played out!")
                 break
 
-        return timeline_after_play, buffer, wasted_bd
+        if buffer < 0:  # action ends because a video stuck(needs rebuffer)
+            buffer = (-1) * action_time  # rebuf time is the remain action time(cause the player will stuck for this time too)
+        return buffer, wasted_bw
               
     def buffer_management(self, download_video_id, bitrate, sleep_time):
         buffer = 0
@@ -152,7 +154,7 @@ class Environment:
 
         if sleep_time > 0:
             delay = sleep_time
-            play_timeline, buffer, wasted = self.play_videos(sleep_time)
+            buffer, wasted = self.play_videos(sleep_time)
             # Return the end flag for the current playing video
             if self.play_video_id == self.video_num:  # if user leaves
                 end_of_video = True
@@ -166,7 +168,7 @@ class Environment:
             # print("the actual download delay is:", delay)
             # print("\n\n")
             # play_timeline, buffer = self.players[self.play_video_id - self.start_video_id].video_play(delay)
-            play_timeline, buffer, wasted = self.play_videos(delay)
+            buffer, wasted = self.play_videos(delay)
             self.total_downloaded_len += VIDEO_CHUNCK_LEN  # sum up the total downloaded time
             if download_video_id < self.start_video_id:
                 # If the video has already been ended, we only accumulate the wastage
