@@ -7,7 +7,7 @@ BW_ADJUST_PARA = 1
 
 def load_trace(cooked_trace_folder=COOKED_TRACE_FOLDER):
     cooked_files = os.listdir(cooked_trace_folder)
-    cooked_files = sorted(cooked_files)
+    cooked_files.sort(key=lambda x: int(x))
     all_cooked_time = []
     all_cooked_bw = []
     for cooked_file in cooked_files:
