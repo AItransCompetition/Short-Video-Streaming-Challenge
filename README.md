@@ -171,17 +171,16 @@ You can evaluate your program with our simulator by simply running the `run.py` 
 
 - `--baseline`, `--solution`：choose the algorithm you are evaluating
 
-- `--trace`: (optional) choose the type of trace you are evaluating from "fixed", "medium", "low", "high". By default, trace would be set to fixed.
+- `--trace`: (optional) choose the type of trace you are evaluating from "mixed", "medium", "low", "high". By default, trace would be set to mixed.
 
 1）Run a baseline algorithm
 
-We have two baseline algorithms, fix_preload and no_preload, which you can refer to the content introduction for details. 
+We have one baseline algorithm `no_save`, which you can refer to the content introduction for details. 
 
-You can run these baselines to get a basic idea of our simulator and how you can interact with it.
+You can run the baselines to get a basic idea of our simulator and how you can interact with it.
 
 ```bash
-python run.py --baseline fixed_preload
-python run.py --baseline no_preload
+python run.py --baseline no_save
 ```
 
 2）Run your own algorithm
@@ -249,7 +248,7 @@ The directory `/submit` provides a sample for the directory that you submit on o
 
 - **We change the argument name of your own algorithm path for `run.py`  from `--user` to `--solution` to prevent confusion with user model.**
 - Expand video traces to 7 videos. Check `/data/short_video_size/` and `/user_ret` directory for details.
-- Add `test_all_traces` function, which you can test on a specific set of traces (fixed, medium, high, low), each contains several distinct traces with similar patterns, and get the average indices.
+- Add `test_all_traces` function, which you can test on a specific set of traces (mixed, medium, high, low), each contains several distinct traces with similar patterns, and get the average indices.
   - By default, running `run.py` will be running this new function. If you want to test a certain trace, you can change the testing logic in `run.py` by yourself.
 - Add `test_user_samples` function, which enables you to test several user samples at a time and get their average indices.
 - Fix the QoE calculation issue. Thanks to https://github.com/AItransCompetition/Short-Video-Streaming-Challenge/issues/2.
