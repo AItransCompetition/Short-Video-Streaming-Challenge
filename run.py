@@ -83,6 +83,12 @@ def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
 
     # Decision variables
     download_video_id, bit_rate, sleep_time = solution.run(0, 0, 0, False, 0, net_env.players, True)  # take the first step
+
+    assert 0 <= bit_rate <= 2, "Your chosen bitrate [" + str(bit_rate) + "] is out of range. "\
+        + "\n   % Hint: you can only choose bitrate 0 - 2 %"
+    assert 0 <= download_video_id <= 4, "The video you choose is not in the current Recommend Queue. \
+        \n   % You can only choose the current play video and its following four videos %"
+
     # output the first step
     if sleep_time != 0:
         print("You choose to sleep for ", sleep_time, " ms", file=log_file)

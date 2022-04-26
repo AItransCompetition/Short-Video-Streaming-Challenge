@@ -67,7 +67,11 @@ class Player:
         return self.video_len
 
     def get_video_size(self, quality):
-        video_chunk_size = self.video_size[quality][self.video_chunk_counter]
+        try:
+            video_chunk_size = self.video_size[quality][self.video_chunk_counter]
+        except IndexError:
+            raise Exception("You're downloading chunk ["+str(self.video_chunk_counter)+"] is out of range. "\
+                            + "\n   % Hint: The valid chunk id is from 0 to " + str(self.chunk_num-1) + " %")
         # self.preload_size += video_chunk_size
         return video_chunk_size
 
