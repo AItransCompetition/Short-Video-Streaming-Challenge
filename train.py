@@ -280,6 +280,7 @@ def work_agent(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
             play_video_id, waste_bytes = net_env.buffer_management(download_video_id, bit_rate, sleep_time)
             # print(delay, rebuf, video_size, end_of_video, play_video_id, waste_bytes)
 
+
             # Update bandwidth usage
             bandwidth_usage += video_size
 
