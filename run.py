@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--quickstart', type=str, default='', help='Is testing quickstart')
 parser.add_argument('--baseline', type=str, default='', help='Is testing baseline')
 parser.add_argument('--solution', type=str, default='./', help='The relative path of your file dir, default is current dir')
-parser.add_argument('--trace', type=str, default='fixed', help='The network trace you are testing (fixed, high, low, medium, middle)')
+parser.add_argument('--trace', type=str, default='mixed', help='The network trace you are testing (fixed, high, low, medium, middle)')
 args = parser.parse_args()
 
 RANDOM_SEED = 42  # the random seed for user retention
