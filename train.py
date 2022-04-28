@@ -75,6 +75,7 @@ def cul_reward(quality, rebuffer, smooth, price):
 
 
 def central_agent(net_params_queues, exp_queues):
+    # Same as a3c used in Pensieve
     assert len(net_params_queues) == NUM_AGENTS
     assert len(exp_queues) == NUM_AGENTS
 
@@ -221,14 +222,15 @@ def central_agent(net_params_queues, exp_queues):
 
 
 def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_queue):
-
+    # Initial the environment
     net_env = env.Environment(user_sample_id=agent_id,
                               all_cooked_time=all_cooked_time,
                               all_cooked_bw=all_cooked_bw,
                               video_num=ALL_VIDEO_NUM,
                               seeds=seeds)
-
+    # Initial the tensorflow session
     with tf.Session(config=config) as sess:
+        # Initial the a3c
         actor = a3c.ActorNetwork(sess,
                                  state_dim=[S_INFO, S_LEN], action_dim=A_DIM,
                                  learning_rate=ACTOR_LR_RATE)
@@ -244,14 +246,7 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
         download_video_id = DEFAULT_ID
         bit_rate = DEFAULT_BITRATE
         sleep_time = DEFAULT_SLEEP
-
-        if sleep_time != 0:
-            print("You choose to sleep for ", sleep_time, " ms", file=log_file)
-        else:
-            print("Download Video ", download_video_id, " chunk (",
-                  net_env.players[download_video_id].get_chunk_counter() + 1, " / ",
-                  net_env.players[download_video_id].get_chunk_sum(), ") with bitrate ", bit_rate,
-                  file=log_file)
+        current_video_id = 0
 
         # Initial the state, action, reward batch
         action_vec = np.zeros(A_DIM)
@@ -290,6 +285,7 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
                         # print("downloading ", download_video_id, "chunk ", download_chunk, ", bitrate switching from ", last_bitrate, " to ", bit_rate)
                     last_bitrate = bit_rate
 
+            # Take action on and get the states from the env
             delay, rebuf, video_size, end_of_video, \
             play_video_id, waste_bytes = net_env.buffer_management(download_video_id, bit_rate, sleep_time)
 
@@ -302,6 +298,7 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
             sum_wasted_bytes += waste_bytes  # Sum up the bandwidth wastage
 
             # List the remaining buffer of the videos in queue
+            # Use '+' to separate videos
             buffer_list = ''
             for i in range(len(net_env.players)):
                 buffer_list = buffer_list + '+' + str(int(net_env.players[i].buffer_size))
@@ -333,9 +330,8 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
                 print("Finished Playing!", file=log_file)
 
             reward = 0
-
             # play over all videos
-            if play_video_id >= ALL_VIDEO_NUM:
+            if play_video_id != current_video_id:
                 print("The user leaves.", file=log_file)
                 reward = cul_reward(quality, rebuf, smooth, price=0)
             r_batch.append(reward)
