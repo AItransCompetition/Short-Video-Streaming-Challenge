@@ -72,7 +72,7 @@ def cul_reward(quality, rebuffer, smooth, price, sleep_time):
     if sleep_time == 0 :
         reward = alpha * quality - beta * rebuffer - gamma * smooth - theta * price
     else:
-        reward = -1
+        reward = -1 # Give sleeping a punishment
     return reward
 
 
@@ -262,7 +262,7 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
         entropy_record = []
 
         # Print the header line of log file
-        log_file.write("time_stamp\tdown_v\tquality\tsleep\trebuf\treward\tdelay\t\tplay/down/total\tbuflist\t\t\t\taction_prob\n")
+        log_file.write("time_stamp\tdown_v\tquality\tsleep\trebuf\treward\tdelay\tplay/down/total\tbuflist\t\t\t\taction_prob\n")
 
         # sum of wasted bytes for a user
         sum_wasted_bytes = 0
@@ -294,7 +294,7 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
             # Update bandwidth wastage
             sum_wasted_bytes += waste_bytes  # Sum up the bandwidth wastage
 
-            #Culculate the step reward
+            # Culculate the step reward
             reward = 0
             quality = 0
             smooth = 0
@@ -304,7 +304,7 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
                 smooth = abs(quality - VIDEO_BIT_RATE[last_bitrate])
             if end_of_video :
                 for i in range(download_chunk_num) :
-                    bitrate_usage = 100
+                    bitrate_usage = 100 # It should be the waste of bitrate actually
 
             reward = cul_reward(quality, rebuf, smooth, bitrate_usage, sleep_time)
             r_batch.append(reward)
@@ -317,8 +317,11 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
             for i in range(len(net_env.players)):
                 buffer_list = buffer_list + '+' + str(int(net_env.players[i].buffer_size))
 
+            # Get the user retent rate of current playing video
+            usr_time, usr_retent_rate = net_env.players[0].get_user_model()
+
             # Print log information of the last action
-            log_file.write(("%09d\t%1d\t%1d\t%4d\t%2d\t%6.1f\t%4d\t\t%4.1f/%3d/%3d\t%-25s\t" %
+            log_file.write(("%09d\t%1d\t%1d\t%4d\t%2d\t%6.1f\t%4d\t%4.1f/%3d/%3d\t%-25s\t" %
                             (time_stamp, download_video_id, bit_rate, sleep_time, rebuf, reward, delay,
                              play_chunk_num, download_chunk_num, total_chunk_num, buffer_list)))
             log_file.write((" ".join(str(format(i, '.3f')) for i in action_prob[0]) + '\n'))
@@ -363,7 +366,7 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
             state[5, -1] = net_env.players[0].buffer_size
             state[6, -1] = net_env.players[0].chunk_num
 
-            # Decide the args for the next step
+            # Decide the actions for the next step
             action_prob = actor.predict(np.reshape(state, (1, S_INFO, S_LEN)))
             action_cumsum = np.cumsum(action_prob)
             hitcount = np.zeros(A_DIM)
