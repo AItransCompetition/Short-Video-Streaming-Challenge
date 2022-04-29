@@ -26,7 +26,7 @@ class Retention:
             self.sample_playback_duration = interval
         else:  # uniform distribute over the second
             random.seed(seeds[1])
-            self.sample_playback_duration = random.uniform(interval, interval+1000)
+            self.sample_playback_duration = int(random.uniform(interval, interval+1000))
 
     def get_ret_duration(self):  # ms
         # print('sample playback duration %d' % self.sample_playback_duration)
