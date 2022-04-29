@@ -180,6 +180,7 @@ class Environment:
                 if self.play_video_id == self.video_num:  # if user leaves
                     end_of_video = True
                 else:
+                    # Download next video chunk
                     end_of_video = self.players[download_video_id-self.start_video_id].video_download(VIDEO_CHUNCK_LEN)
 
         # Sum up the bandwidth wastage
