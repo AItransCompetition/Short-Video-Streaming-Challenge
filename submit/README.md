@@ -54,7 +54,7 @@ def run(self, delay, rebuf, video_size, end_of_video, play_video_id, Players):
 
   | Library name | numpy  | torch  | tensorflow |
   | :----------: | :----: | :----: | :--------: |
-  |   Version    | 1.21.5 | 1.11.0 |   2.8.0    |
+  |   Version    | 1.19.5 | 1.10.2 |   2.6.2    |
 
 * If you want to add some site package ,please concact zuoxt18@mails.tsinghua.edu.cn
 
