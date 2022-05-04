@@ -135,6 +135,7 @@ def testing(epoch, nn_model, log_file):
 
 def central_agent(net_params_queues, exp_queues):
     assert len(net_params_queues) == NUM_AGENTS
+    assert len(net_params_queues[0]) == 2
     assert len(exp_queues) == NUM_AGENTS
 
     logging.basicConfig(filename=LOG_FILE + '_central',
@@ -174,8 +175,7 @@ def central_agent(net_params_queues, exp_queues):
             actor_net_params_bitrate = actor_bitrate.get_network_params()
             critic_net_params = critic.get_network_params()
             for i in range(NUM_AGENTS):
-                net_params_queues[i][0].put([actor_net_params_length, critic_net_params])
-                net_params_queues[i][1].put([actor_net_params_bitrate, critic_net_params])
+                net_params_queues[i].put([actor_net_params_length, actor_net_params_bitrate, critic_net_params])
                 # Note: this is synchronous version of the parallel training,
                 # which is easier to understand and probe. The framework can be
                 # fairly easily modified to support asynchronous training.
@@ -199,20 +199,20 @@ def central_agent(net_params_queues, exp_queues):
 
             nreward = TRAIN_SEQ_LEN
             for i in range(NUM_AGENTS):
-                s_batch, a_batch, r_batch, terminal, info = exp_queues[i].get()
+                s_batch, a_batch_length, a_batch_bitrate, r_batch, terminal, info = exp_queues[i].get()
 
                 print(len(s_batch))
                 print(len(s_batch[0]))
                 actor_gradient_length, critic_gradient, td_batch = \
                     a3c.compute_gradients(
                         s_batch=np.stack(s_batch, axis=0),
-                        a_batch=np.vstack(a_batch),
+                        a_batch=np.vstack(a_batch_length),
                         r_batch=np.vstack(r_batch),
                         terminal=terminal, actor=actor_length, critic=critic)
                 actor_gradient_bitrate, critic_gradient, td_batch = \
                     a3c.compute_gradients(
                         s_batch=np.stack(s_batch, axis=0),
-                        a_batch=np.vstack(a_batch),
+                        a_batch=np.vstack(a_batch_bitrate),
                         r_batch=np.vstack(r_batch),
                         terminal=terminal, actor=actor_bitrate, critic=critic)
 
@@ -231,6 +231,7 @@ def central_agent(net_params_queues, exp_queues):
                 total_entropy += np.mean(info['entropy'])
 
             assert NUM_AGENTS == len(actor_gradient_batch_length)
+            assert NUM_AGENTS == len(actor_gradient_batch_bitrate)
             assert len(actor_gradient_batch_length) == len(critic_gradient_batch)
             assert len(actor_gradient_batch_bitrate) == len(critic_gradient_batch)
             # mean_actor_gradient_batch = np.zeros(nreward)
