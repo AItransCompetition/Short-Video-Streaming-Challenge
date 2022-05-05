@@ -59,6 +59,7 @@ class Environment:
             if self.video_cnt >= self.video_num:  # If exceed video cnt, no add
                 return
             self.players.append(Player(self.video_cnt))
+            self.end_video_id += 1
             # print("adding: ", self.video_num)
             user_time, user_retent_rate = self.players[-1].get_user_model()
             self.user_models.append(Retention(user_time, user_retent_rate, self.seeds[self.video_cnt]))
@@ -132,7 +133,6 @@ class Environment:
                 self.player_op(DEL)
                 self.start_video_id += 1
                 self.player_op(NEW)
-                self.end_video_id += 1
                 self.play_video_id += 1
 
             if self.play_video_id >= self.video_num:
