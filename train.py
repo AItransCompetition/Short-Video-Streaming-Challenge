@@ -4,6 +4,7 @@ sys.path.append('./simulator/')
 import argparse
 import random
 import numpy as np
+import math
 from simulator import controller as env
 from simulator.controller import PLAYER_NUM
 import load_trace
@@ -60,6 +61,8 @@ DEFAULT_ID = 0
 DEFAULT_BITRATE = 0
 DEFAULT_SLEEP = 0
 
+b_IN_B = 8
+b_IN_kb = 1000
 # log file
 log_file = open(LOG_FILE + '.txt', 'w')
 
@@ -70,7 +73,7 @@ seeds = np.random.randint(100, size=(ALL_VIDEO_NUM, 2))
 
 def cul_reward(quality, rebuffer, smooth, price, sleep_time):
     if sleep_time == 0 :
-        reward = alpha * quality - beta * rebuffer - gamma * smooth - theta * price
+        reward = alpha * quality - beta * rebuffer - gamma * smooth - (alpha + theta) * price
     else:
         reward = -1 # Give sleeping a punishment
     return reward
@@ -291,6 +294,8 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
             # Update bandwidth usage
             bandwidth_usage += video_size
 
+            video_size = video_size * b_IN_B / b_IN_kb
+
             # Update bandwidth wastage
             sum_wasted_bytes += waste_bytes  # Sum up the bandwidth wastage
 
@@ -315,10 +320,31 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
             # Use '+' to separate videos
             buffer_list = ''
             for i in range(len(net_env.players)):
-                buffer_list = buffer_list + '+' + str(int(net_env.players[i].buffer_size))
+                buffer_list = buffer_list + '+' + str(int(net_env.players[i].get_buffer_size()))
+
+            # Get the remaining buffer of playing video
+            buffer_size = net_env.players[0].get_buffer_size()
 
             # Get the user retent rate of current playing video
             usr_time, usr_retent_rate = net_env.players[0].get_user_model()
+            input_retent_rate = []
+            for i in range(S_LEN):
+                if math.floor(play_chunk_num)+i < len(usr_retent_rate):
+                    input_retent_rate.append(float(usr_retent_rate[math.floor(play_chunk_num)+i]))
+                else :
+                    input_retent_rate.append(0)
+            # print(input_retent_rate)
+
+            # Get the size of next download chunk in different quality
+            remain_chunk_num = net_env.players[0].get_remain_video_num() # Undownloaded chunk number of playing video
+            if remain_chunk_num > 0:
+                next_chunk_size = net_env.players[0].get_undownloaded_video_size(1)
+                assert len(next_chunk_size) == A_DIM
+                for i in range(A_DIM):
+                    next_chunk_size[i] = next_chunk_size[i][0] * b_IN_B / b_IN_kb / VIDEO_BIT_RATE[i]
+                # print(next_chunk_size)
+            else :
+                next_chunk_size = [0] * A_DIM
 
             # Print log information of the last action
             log_file.write(("%09d\t%1d\t%1d\t%4d\t%2d\t%6.1f\t%4d\t%4.1f/%3d/%3d\t%-25s\t" %
@@ -357,15 +383,16 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
 
             # dequeue history record
             state = np.roll(state, -1, axis=1)
-
-            state[0, -1] = delay
-            state[1, -1] = rebuf
-            state[2, -1] = video_size
-            state[3, -1] = end_of_video
-            state[4, -1] = play_video_id
-            state[5, -1] = net_env.players[0].buffer_size
-            state[6, -1] = net_env.players[0].chunk_num
-
+            # print("---------------------")
+            state[0, -1] = delay / 1000.0 # in s
+            state[1, -1] = rebuf / 1000.0 # in s
+            state[2, -1] = video_size # in kb
+            state[3, -1] = last_bitrate # quality index
+            state[4, -1] = buffer_size / 1000.0 # in s
+            state[5, :A_DIM] = next_chunk_size # in relative value
+            state[5, -1] = 0.0
+            state[6, :S_LEN] = input_retent_rate # retent prob of next S_LEN chunk
+            # print(state)
             # Decide the actions for the next step
             action_prob = actor.predict(np.reshape(state, (1, S_INFO, S_LEN)))
             action_cumsum = np.cumsum(action_prob)
