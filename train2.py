@@ -406,9 +406,6 @@ def work_agent(agent_id, all_cooked_time, all_cooked_bw, net_params_queue, exp_q
                 download_video_id = DEFAULT_ID
                 sleep_time = DEFAULT_SLEEP
 
-                action_vec = np.zeros(A_DIM)
-                action_vec[bit_rate] = 1
-
                 action1 = DEFAULT_ACTION1
                 action2 = DEFAULT_ACTION2
 

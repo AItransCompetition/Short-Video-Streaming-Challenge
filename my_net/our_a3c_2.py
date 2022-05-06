@@ -172,7 +172,7 @@ class ActorNetwork1(object):
                                                          alpha=leaky)
             dense_net_1 = tflearn.fully_connected(dense_net_0, 8, activation='linear')
 
-            out = tflearn.fully_connected(dense_net_1, 1, activation='linear')
+            out = tflearn.fully_connected(dense_net_1, 1, activation='tanh')
 
             return inputs, out
 
