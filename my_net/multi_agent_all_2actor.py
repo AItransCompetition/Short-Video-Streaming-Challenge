@@ -135,7 +135,6 @@ def testing(epoch, nn_model, log_file):
 
 def central_agent(net_params_queues, exp_queues):
     assert len(net_params_queues) == NUM_AGENTS
-    assert len(net_params_queues[0]) == 2
     assert len(exp_queues) == NUM_AGENTS
 
     logging.basicConfig(filename=LOG_FILE + '_central',
