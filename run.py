@@ -36,6 +36,7 @@ all_cooked_bw = []
 # record the last chunk(which will be played) of each video to aid the calculation of smoothness
 last_chunk_bitrate = [-1, -1, -1, -1, -1, -1, -1]
 
+
 # calculate the smooth penalty for an action to download:
 # chunk:[chunk_id] of the video:[download_video_id] with bitrate:[quality]
 def get_smooth(net_env, download_video_id, chunk_id, quality):
@@ -43,6 +44,8 @@ def get_smooth(net_env, download_video_id, chunk_id, quality):
         return 0
     if chunk_id == 0:  # needs to find the last chunk of the last video
         last_bitrate = last_chunk_bitrate[download_video_id - 1]
+        if last_bitrate == -1:  # the neighbour chunk is not downloaded
+            return 0
     else:
         last_bitrate = net_env.players[download_video_id - net_env.get_start_video_id()].get_downloaded_bitrate()[chunk_id - 1]
     return abs(quality - VIDEO_BIT_RATE[last_bitrate])
@@ -117,8 +120,15 @@ def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
             if max_watch_chunk_id >= download_chunk:  # the downloaded chunk will be played
                 if download_chunk == max_watch_chunk_id:  # maintain the last_chunk_bitrate array
                     last_chunk_bitrate[download_video_id] = bit_rate
+                    rel_id = download_video_id - net_env.get_start_video_id()
+                    if rel_id + 1 < len(net_env.user_models):  # If its not the last visible video
+                        if net_env.players[rel_id + 1].get_chunk_counter() != 0:
+                            # if the next video chunk has already been downloaded before this last chunk,
+                            # we include the smooth penalty here.
+                            next_bitrate = net_env.players[rel_id + 1].get_downloaded_bitrate()[0]
+                            smooth += abs(quality - VIDEO_BIT_RATE[next_bitrate])
                 quality = VIDEO_BIT_RATE[bit_rate]
-                smooth = get_smooth(net_env, download_video_id, download_chunk, quality)
+                smooth += get_smooth(net_env, download_video_id, download_chunk, quality)
                 print("Causing smooth penalty: ", smooth, file=log_file)
 
 
@@ -180,6 +190,8 @@ def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
 
         # Apply the participant's algorithm to decide the args for the next step
         download_video_id, bit_rate, sleep_time = solution.run(delay, rebuf, video_size, end_of_video, play_video_id, net_env.players, False)
+        assert 0 <= download_video_id - play_video_id < len(net_env.players), "The video you choose is not in the current Recommend Queue. \
+                \n   % You can only choose the current play video and its following four videos %"
 
         # print log info of the last operation
         print("\n\n*****************", file=log_file)
