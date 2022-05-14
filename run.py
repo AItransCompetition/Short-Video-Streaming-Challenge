@@ -199,6 +199,8 @@ def test(isBaseline, isQuickstart, user_id, trace_id, user_sample_id):
         if sleep_time != 0:
             print("You choose to sleep for ", sleep_time, " ms", file=log_file)
         else:
+            assert 0 <= download_video_id - play_video_id < len(net_env.players), "The video you choose is not in the current Recommend Queue. \
+                \n   % You can only choose the current play video and its following four videos %"
             print("Download Video ", download_video_id, " chunk (", net_env.players[download_video_id - play_video_id].get_chunk_counter() + 1, " / ",
                   net_env.players[download_video_id - play_video_id].get_chunk_sum(), ") with bitrate ", bit_rate, file=log_file)
     # Score

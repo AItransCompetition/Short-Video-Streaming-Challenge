@@ -153,6 +153,7 @@ class Environment:
         wasted_bytes = 0
 
         if sleep_time > 0:
+            sleep_time = int(sleep_time)
             delay = sleep_time
             buffer, wasted = self.play_videos(sleep_time)
             # Return the end flag for the current playing video

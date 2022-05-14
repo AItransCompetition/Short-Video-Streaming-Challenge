@@ -21,6 +21,7 @@ class Player:
         videos = []
         for root, dirs, files in os.walk(VIDEO_SIZE_FILE):
             videos = dirs
+            videos.sort()
             break
         video_name = videos[video_num%DISTINCT_VIDEO_NUM]
         for bitrate in range(BITRATE_LEVELS):
